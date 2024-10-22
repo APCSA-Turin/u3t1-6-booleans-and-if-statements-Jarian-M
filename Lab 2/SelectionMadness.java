@@ -43,4 +43,29 @@ public class SelectionMadness {
         }
         return num3;
     }
+    /* Returns true if the three provided lengths create a right triangle, in
+     other words, a2 + b2 = c2, where c is the longest side; returns false
+     Otherwise (hint: use the largest() method that you wrote).
+     Note the "largest" side could be any of the 3 numbers, i.e. your method
+     should work if side1 = 3, side2 = 4, and side3 = 5 and also if
+     side1 = 5, side2 = 4, and side3 = 3
+    */
+    public boolean rightTriangle(int side1, int side2, int side3) {
+        /* implement this method */
+        int largest = largest(side1, side2, side3);
+        if(side1 == largest) {
+            if(Math.pow(side2, 2) + Math.pow(side3, 2) == Math.pow(side1, 2)) {
+                return true;
+            }
+        } else if(side2 == largest) {
+            if(Math.pow(side1, 2) + Math.pow(side3, 2) == Math.pow(side2, 2)) {
+                return true;
+            }
+        } else if (side3 == largest) {
+            if(Math.pow(side1, 2) + Math.pow(side2, 2) == Math.pow(side3, 2)) {
+                return true;
+            }
+        }
+        return false;
+    }
   }  
